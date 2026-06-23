@@ -1,0 +1,6 @@
+{
+  "name": "Vérificateur de Comptes Équipe",
+  "description": "Outil de vérification comptable permettant aux membres de l'équipe de consulter leur compte personnel et de signer leur fiche de paie en renseignant leur nom, d'identité unique ou numéro d'examen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
