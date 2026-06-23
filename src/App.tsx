@@ -4,16 +4,13 @@ import { teamMembers, TeamMember, findMemberByCredentials } from "./data/teamAcc
 import AccountDetails from "./components/AccountDetails";
 import PaymentRequest from "./components/PaymentRequest";
 import { 
-  Search, 
   Fingerprint, 
   AlertCircle, 
   CheckCircle, 
   Wallet, 
   User, 
   FileSignature, 
-  Users, 
   Info,
-  ChevronRight,
   ShieldCheck,
   Award,
   BookOpen
@@ -27,10 +24,6 @@ export default function App() {
   const [inputName, setInputName] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
   const [loginError, setLoginError] = useState<string | null>(null);
-  
-  // Demo selector states
-  const [showDemoSelector, setShowDemoSelector] = useState(false);
-  const [demoSearchQuery, setDemoSearchQuery] = useState("");
 
   const handleLoginAttempt = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +38,7 @@ export default function App() {
     }
 
     if (!code) {
-      setLoginError("Vous devez saisir votre numéro d'examen ou votre ID Unique.");
+      setLoginError("Vous devez saisir votre ID Unique.");
       return;
     }
 
@@ -56,17 +49,9 @@ export default function App() {
       setActiveTab("balance");
     } else {
       setLoginError(
-        "Échec de l'authentification. Le nom renseigné ne correspond pas à la base de données, ou l'ID / Numéro d'Examen est erroné."
+        "Échec de l'authentification. Le nom renseigné ne correspond pas à la base de données, ou l'ID Unique est erroné."
       );
     }
-  };
-
-  const selectDemoUser = (user: TeamMember) => {
-    // Fill the inputs automatically with selected student credentials
-    setInputName(user.nom);
-    setVerificationCode(user.examNum || user.uniqueId || "");
-    setLoginError(null);
-    setShowDemoSelector(false);
   };
 
   const handleLogout = () => {
@@ -75,14 +60,6 @@ export default function App() {
     setVerificationCode("");
     setLoginError(null);
   };
-
-  // Filter demo list by query
-  const filteredDemoUsers = teamMembers.filter(member => 
-    member.nom.toLowerCase().includes(demoSearchQuery.toLowerCase()) ||
-    member.parcours.toLowerCase().includes(demoSearchQuery.toLowerCase()) ||
-    (member.uniqueId && member.uniqueId.includes(demoSearchQuery)) ||
-    (member.examNum && member.examNum.includes(demoSearchQuery))
-  );
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between font-sans selection:bg-indigo-100 selection:text-indigo-900">
@@ -130,7 +107,7 @@ export default function App() {
                   Consulter mon reliquat
                 </h1>
                 <p className="text-sm text-slate-500 font-sans leading-relaxed max-w-md mx-auto">
-                  Saisissez votre nom complet accompagné de votre code de vérification ou ID unique.
+                  Saisissez votre nom complet accompagné de votre ID unique d'étudiant.
                 </p>
               </div>
 
@@ -169,11 +146,11 @@ export default function App() {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
                       <Fingerprint className="w-3.5 h-3.5 text-slate-400" />
-                      Numéro d'examen ou ID unique
+                      ID unique d'étudiant
                     </label>
                     <input
                       type="text"
-                      placeholder="Ex: 4, 3, 344..."
+                      placeholder="Ex: 1284, 4176, 3628..."
                       value={verificationCode}
                       onChange={(e) => setVerificationCode(e.target.value)}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-mono font-bold"
@@ -181,7 +158,7 @@ export default function App() {
                     
                     {/* Explicit indicator note based on user request */}
                     <p className="text-[11px] font-sans text-amber-800 bg-amber-50 border border-amber-200/55 p-3 rounded-xl mt-2 leading-relaxed selection:bg-amber-100/50">
-                      ℹ️ <strong className="font-bold text-amber-950">Indication :</strong> Saisir votre numéro d'examen, spécifiquement pour le parcours DPII : Saisir l'ID.
+                      ℹ️ <strong className="font-bold text-amber-950">Indication :</strong> Saisir votre ID unique d'étudiant (par exemple : <span className="font-semibold">3839, 4176 ou 3628</span>) de la liste universitaire 2024-2025.
                     </p>
                   </div>
 
@@ -189,7 +166,7 @@ export default function App() {
                   <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-2.5 text-xs text-slate-600 leading-relaxed">
                     <Info className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
                     <div>
-                      Pour lever l'accès, le système requiert votre <strong className="text-slate-900">nom complet</strong> ET votre <strong className="text-slate-900">N° d'examen ou ID unique</strong> correspondant figurant sur le registre.
+                      Pour lever l'accès, le système requiert votre <strong className="text-slate-900">nom complet</strong> ET votre <strong className="text-slate-900">ID unique</strong> correspondant figurant sur le registre.
                     </div>
                   </div>
 

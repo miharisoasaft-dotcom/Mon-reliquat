@@ -1,6 +1,6 @@
 {
-  "name": "Vérificateur de Comptes Équipe",
-  "description": "Outil de vérification comptable permettant aux membres de l'équipe de consulter leur compte personnel et de signer leur fiche de paie en renseignant leur nom, d'identité unique ou numéro d'examen.",
+  "name": "Portail Reliquat - Comité Randramiharo",
+  "description": "Portail de consultation de reliquat géré par le Comité Randramiharo pour les étudiants de Master 1, permettant de vérifier son solde et de signer son reçu électronique grâce à son ID unique.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
