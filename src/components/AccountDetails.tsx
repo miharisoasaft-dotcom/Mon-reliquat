@@ -33,10 +33,10 @@ export default function AccountDetails({ member, onSignRequest, onLogout }: Acco
 
   // Badge properties per Parcours
   const badgeConfig = {
-    SP: { bg: "bg-blue-50 text-blue-700 border-blue-200", label: "Special Projects" },
-    DA: { bg: "bg-amber-50 text-amber-700 border-amber-200", label: "Data Analytics" },
-    DPA: { bg: "bg-rose-50 text-rose-700 border-rose-200", label: "Digital Product Architecture" },
-    DPII: { bg: "bg-emerald-50 text-emerald-700 border-emerald-200", label: "Tehnical Engineering & Infrastructure" }
+    SP: { bg: "bg-blue-50 text-blue-700 border-blue-200", label: "Sciences Politiques (SP)" },
+    DA: { bg: "bg-amber-50 text-amber-700 border-amber-200", label: "Droit des Affaires (DA)" },
+    DPA: { bg: "bg-rose-50 text-rose-700 border-rose-200", label: "Droit Privé Appliqué (DPA)" },
+    DPII: { bg: "bg-emerald-50 text-emerald-700 border-emerald-200", label: "Droit Public Interne & International (DPII)" }
   };
 
   const parcoursBadge = badgeConfig[member.parcours] || { bg: "bg-slate-50 text-slate-700 border-slate-200", label: "Membre Équipe" };
