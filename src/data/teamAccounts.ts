@@ -45,6 +45,7 @@ export const teamMembers: TeamMember[] = [
 
   // --- DA ---
   { nom: "MAHANDRIARISOA HANTRANIAINA MIRANTO", parcours: "DA", cake: 15000, frn: 10000, total: 46231.39, arrondi: 46200, uniqueId: "3678" },
+  { nom: "RAKOTOARIJAONA NY ANTSA MINALDINHA", parcours: "DA", cake: 0, frn: 10000, total: 41231.39, arrondi: 41200, uniqueId: "819" },
   { nom: "ANDRIAMAMENOSOA NY MISANDRATRA FANANTENANA", parcours: "DA", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "33913" },
   { nom: "RANDRIAMITANTSOA LYANTSOA", parcours: "DA", cake: 6000, frn: 10000, total: 37231.39, arrondi: 37200, uniqueId: "4353" },
   { nom: "RANDRIANANTOANDRO JEANNIE RANJARILANTO", parcours: "DA", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "42006" },
