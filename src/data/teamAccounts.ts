@@ -71,6 +71,7 @@ export const teamMembers: TeamMember[] = [
 
   // --- DPA ---
   { nom: "ANDRIAFANOMEZANTSOA AINA NEKENA CAROLE", parcours: "DPA", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "1874" },
+  { nom: "RANIRINTSOA MANOA FEHIZORO", parcours: "DPA", cake: 0, frn: 10000, total: 31231.39, arrondi: 31200, uniqueId: "961" },
   { nom: "ANDRIAMAHAVITASOA VOARY MICHELLE JESSICA", parcours: "DPA", cake: 12000, frn: 20000, total: 53231.39, arrondi: 53200, uniqueId: "1973" },
   { nom: "ANDRIAMAMPITA URSULA RAZAFINDRAVAO", parcours: "DPA", cake: 9000, frn: 20000, total: 50231.39, arrondi: 50200, uniqueId: "42527" },
   { nom: "ANDRIAMARONAINA MAMITIANA VALISOA", parcours: "DPA", cake: 12000, frn: 20000, total: 53231.39, arrondi: 53200, uniqueId: "4199" },
