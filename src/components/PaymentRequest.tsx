@@ -208,13 +208,17 @@ export default function PaymentRequest({ member, onBack }: PaymentRequestProps) 
       doc.rect(15, currentY, 180, 10, "S");
 
       doc.setFont("Helvetica", "bold");
-      doc.setFontSize(10);
+      doc.setFontSize(8.5);
       doc.setTextColor(49, 46, 129); // slate-900 / indigo-900
-      doc.text("SOLDE NET DE DEMANDE DE PAIEMENT ACCORDÉ (ARRONDI) :", 18, currentY + 6.5);
+      const balanceLabel = member.reliquat !== undefined 
+        ? "SOLDE NET DE DEMANDE DE PAIEMENT ACCORDÉ (RELIQUAT RECTIFIÉ) :" 
+        : "SOLDE NET DE DEMANDE DE PAIEMENT ACCORDÉ (ARRONDI) :";
+      doc.text(balanceLabel, 18, currentY + 6.5);
       
-      doc.setFontSize(11);
+      doc.setFontSize(10);
       doc.setTextColor(67, 56, 202); // indigo-700
-      doc.text(formatArInt(member.arrondi), 150, currentY + 6.5);
+      const finalValForPdf = member.reliquat !== undefined ? formatAr(member.reliquat) : formatArInt(member.arrondi);
+      doc.text(finalValForPdf, 145, currentY + 6.5);
 
       // 4. SIGNATURE SECTION
       currentY += 22;
@@ -508,9 +512,11 @@ export default function PaymentRequest({ member, onBack }: PaymentRequestProps) 
                     </td>
                   </tr>
                   <tr className="bg-indigo-50/50 font-extrabold border-t-2 border-indigo-200 text-indigo-950">
-                    <td className="py-3.5 px-4 text-base">SOLDE NET ARRONDIS À VERSER</td>
+                    <td className="py-3.5 px-4 text-base">
+                      {member.reliquat !== undefined ? "RELIQUAT RECTIFIÉ À VERSER" : "SOLDE NET ARRONDIS À VERSER"}
+                    </td>
                     <td colSpan={2} className="py-3.5 px-4 text-right text-base font-mono text-indigo-700">
-                      {formatArInt(member.arrondi)}
+                      {member.reliquat !== undefined ? formatAr(member.reliquat) : formatArInt(member.arrondi)}
                     </td>
                   </tr>
                 </tfoot>

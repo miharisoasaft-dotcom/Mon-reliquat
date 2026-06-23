@@ -112,14 +112,21 @@ export default function AccountDetails({ member, onSignRequest, onLogout }: Acco
                 <div className="p-1 px-1.5 bg-emerald-50 text-emerald-600 rounded-lg border border-emerald-100">
                   <TrendingUp className="w-4 h-4" />
                 </div>
-                <span className="text-xs text-slate-500 font-semibold tracking-wide uppercase font-mono">Net Arrondi à Percevoir</span>
+                <span className="text-xs text-slate-500 font-semibold tracking-wide uppercase font-mono">
+                  {member.reliquat !== undefined ? "Reliquat Net à Percevoir" : "Net Arrondi à Percevoir"}
+                </span>
               </div>
-              <h4 className="text-3xl font-extrabold text-emerald-600 tracking-tight font-sans pt-3">
-                {formatArInt(member.arrondi)}
+              <h4 className="text-3xl font-extrabold text-emerald-600 tracking-tight font-sans pt-3 font-mono">
+                {member.reliquat !== undefined ? formatAr(member.reliquat) : formatArInt(member.arrondi)}
               </h4>
               <p className="text-xs font-medium text-slate-500 pt-1">
                 Net exact : <span className="text-slate-800 font-bold">{formatAr(member.total)}</span>
               </p>
+              {member.reliquat !== undefined && (
+                <div className="mt-1.5 px-2 py-0.5 bg-amber-50 border border-amber-200/60 rounded-lg text-[10px] text-amber-800 font-sans font-medium uppercase tracking-wide inline-flex items-center gap-1 select-none">
+                  ⚠️ Reliquat Rectifié en Trésorerie
+                </div>
+              )}
             </div>
 
             <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
