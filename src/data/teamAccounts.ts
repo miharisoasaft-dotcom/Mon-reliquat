@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
   { nom: "RATIARISON MIKALO ESTERA", parcours: "SP", cake: 6000, frn: 10000, total: 37231.39, arrondi: 37200, uniqueId: "3461" },
   { nom: "RAZAKARIVONY FIAFERANA ANDY", parcours: "SP", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "2869" },
   { nom: "ANDRIAMANARIVO MIHARAMANANTSOA ANDY LOÏC", parcours: "SP", cake: 12000, frn: 20000, total: 53231.39, arrondi: 53200, uniqueId: "3012" },
-  { nom: "ANDRIANANJANAVALONA NIAINA VANONA", parcours: "SP", cake: 0, frn: 20000, total: 53231.39, arrondi: 41200, uniqueId: "2036" },
+  { nom: "ANDRIANANJANAVALONA NIAINA VANONA", parcours: "SP", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "2036" },
   { nom: "RAKOTOARIMANANA MANDRESY FIONONANA", parcours: "SP", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "3506" },
   { nom: "RAKOTOARIVELO FANOMEZANA JOSELITO", parcours: "SP", cake: 0, frn: 20000, total: 41231.39, arrondi: 41200, uniqueId: "2504" },
   { nom: "RAKOTONDRASOA DERA HOLINAVALONA", parcours: "SP", cake: 0, frn: 10000, total: 31231.39, arrondi: 31200, uniqueId: "4538" },
